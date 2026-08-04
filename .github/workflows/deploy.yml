@@ -6,21 +6,34 @@ on:
       - main
 
 jobs:
+
   deploy:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout source
         uses: actions/checkout@v4
 
+
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
+
         with:
-          host: ${{ secrets.EC2_HOST }}
+
+          host: ${{ secrets.SERVER_IP }}
+
           username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
+
+          key: ${{ secrets.SERVER_SSH_KEY }}
+
           script: |
+
             cd ~/devops-assessment
+
             git pull origin main
+
             docker compose down
+
             docker compose up -d --build
