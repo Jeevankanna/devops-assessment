@@ -1,4 +1,4 @@
-# DevOps Assessment – Step-by-Step Procedure (Human Written)
+# DevOps Assessment – Step-by-Step Procedure 
 
 This is the complete procedure I followed to complete the assessment.
 
